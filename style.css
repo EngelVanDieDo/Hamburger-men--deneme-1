@@ -1,7 +1,7 @@
 *{
 	margin:0px;
 	padding:0px;
-	background-image: url("Slice 1.png");
+	
 	list-style: none;
     border: 0;
     box-sizing: border-box;
@@ -9,15 +9,16 @@
     text-decoration: none;
     font-family: 'Mulish', sans-serif;
     -webkit-font-smoothing: antialiased;
+	background-image: url("Slice 1.png");
 }
 :root {
     --animation-speed: 300ms;
 }
 
 html, body {
-    height: 2000px;
+    height: 100%;
     overflow-x: hidden;
-	
+
 }
 .backdrop {
     position: fixed;
@@ -40,7 +41,7 @@ html, body {
     left: 0;
     width: 300px;
     height: 100%;
-  
+    z-index: 9;
     border-right: 1px solid #ddd;
     transform: translateX(-100%);
     transition: var(--animation-speed) transform;
@@ -130,16 +131,53 @@ html, body {
 #menu-toggle:checked ~ .container .hamburger-menu span {
 	
     width:1000px;
-    transition: var(--animation-speed)  background-color,width 0.5s;
+    transition: var(--animation-speed)  background-color,width 2s;
 }
 #menu-toggle:checked ~ .container .hamburger-menu span::before {
   width:1000px;
     
-    transition: var(--animation-speed) var(--animation-speed) transform, var(--animation-speed) bottom,width 1.5s;
+    transition: var(--animation-speed) var(--animation-speed) transform, var(--animation-speed) bottom,width 2.5s;
 }
 #menu-toggle:checked ~ .container .hamburger-menu span::after {
   width:1000px;
     
-    transition: var(--animation-speed) var(--animation-speed) transform, var(--animation-speed) top,width 1.5s;
+    transition: var(--animation-speed) var(--animation-speed) transform, var(--animation-speed) top,width 2.5s;
+}
+.animate-text {
+	color:#94a1b2;
+    float:left;
+	padding-left:500px;
+	padding-top:40px;
+	font-size:30px;
+	animation: fade-in-down 1.5s  ease-out ;
+	
+}
+.hiza{
+	float:right;
+	padding-top:30px;
+	padding-right:490px;
+	animation: shake  1s ease-out infinite ;
+}
+@keyframes fade-in-down {
+  from {
+	
+    transform: translate3d(0, -300%, 0);
+  }
+
+  to {
+	 
+    transform: translate3d(0, 0 , 0);
+  }
 }
 
+@keyframes shake{
+  from {
+	
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+	 
+    transform: translate3d(0, 30% , 0);
+  }
+}
